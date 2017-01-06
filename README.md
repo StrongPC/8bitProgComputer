@@ -37,3 +37,14 @@ ADD 15, 2
 | 2    | 0f       | 02       |
 
 The HEX code we got is `20f02`. We can upload this to our ROM now, and see the result!
+
+##The ALU
+![ALU](./ALU.png) 
+
+This ALU is made up of :
+
+1. 3 multilpexers ( One 8-bit 4x1 mux for selecting result of operations, two 1-bit 2x1 mux for swtiching between `A` or `~A` (`B` or `~B`))
+2. 8-bit AND gate
+3. 8-bit OR gate
+4. 1-bit OR gate, which can make 2's complement of B for us. 
+5. 2 8-bit NOT gates (for making NOR and NAND logics, and implemetation of SUB function). 
