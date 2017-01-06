@@ -10,7 +10,7 @@ This is an awesome experience, about implementation of 8-bit programmable comput
 This computer, includes 4 ALU options, An, Bn, S1 and S0. S1 and S0 pins are connected to a multiplexer and they do selection of results. An & Bn pins, do invertion on operands A and B. They are used for implementing NOR, NAND and SUB functions. 
 
 | An | Bn | S1 | S0 | Function |
-|:---| ---| ---| ---| --------:|
+|:---| ---| ---| ---| ---------|
 | 0  | 0  | 0  | 0  | AND A, B |
 | 0  | 0  | 0  | 1  | OR A, B  |
 | 0  | 0  | 1  | 0  | ADD A, B |
@@ -22,7 +22,7 @@ This computer, includes 4 ALU options, An, Bn, S1 and S0. S1 and S0 pins are con
 It's very very easy to make hex code for an operation. What you need to consider is this table :
 
 | ALUCode | Operand A | Operand B |
-|:------- | --------- | ---------:|
+|:------- | --------- | ----------|
 | 4 bits  | 8 bits    | 8 bits    |
 | bits 16-19 | bits 8-15 | bits 0-7  |
 
@@ -32,7 +32,7 @@ That's all, a 20 bit binary number, or 5-digit hexadecimal expression. Consider 
 ADD 15, 2
 ```
 | ALUCode | Operand A | Operand B |
-|:------- | --------- | ---------:|
+|:------- | --------- | ----------|
 | 0010 | 00001111 | 00000010 |
 | 2    | 0f       | 02       |
 
