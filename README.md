@@ -14,3 +14,6 @@ This computer, includes 4 ALU options, An, Bn, S1 and S0. S1 and S0 pins are con
 | 0  | 0  | 0  | 0  | AND A, B |
 | 0  | 0  | 0  | 1  | OR A, B  |
 | 0  | 0  | 1  | 0  | ADD A, B |
+| 0  | 1  | 1  | 0  | SUB A, B |
+| 1  | 1  | 0  | 0  | NOR A, B |
+| 1  | 1  | 0  | 1  | NAND A,B |
