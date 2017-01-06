@@ -48,3 +48,14 @@ This ALU is made up of :
 3. 8-bit OR gate
 4. 1-bit OR gate, which can make 2's complement of B for us. 
 5. 2 8-bit NOT gates (for making NOR and NAND logics, and implemetation of SUB function). 
+
+## ROM
+This is the ROM presented by `Logisim` but, as input of address bus, a 4-bit counter is designed. This is schematics of the counter :
+![ROM counter](./ROMCounterInput.png) 
+
+## TODO List
+1. Adding `B-A` operation (currently, the ALU only supports `A-B`). 
+2. Adding a simple register file
+
+
+
