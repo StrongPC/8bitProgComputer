@@ -15,6 +15,7 @@ This computer, includes 4 ALU options, An, Bn, S1 and S0. S1 and S0 pins are con
 | 0  | 0  | 0  | 1  | OR A, B  |
 | 0  | 0  | 1  | 0  | ADD A, B |
 | 0  | 1  | 1  | 0  | SUB A, B |
+| 1  | 0  | 1  | 0  | SUB B, A |
 | 1  | 1  | 0  | 0  | NOR A, B |
 | 1  | 1  | 0  | 1  | NAND A,B |
 
@@ -54,7 +55,7 @@ This is the ROM presented by `Logisim` but, as input of address bus, a 4-bit cou
 ![ROM counter](./ROMCounterInput.png) 
 
 ## TODO List
-1. Adding `B-A` operation (currently, the ALU only supports `A-B`). 
+1. Adding `B-A` operation (currently, the ALU only supports `A-B`). - DONE! 
 2. Adding a simple register file
 
 
