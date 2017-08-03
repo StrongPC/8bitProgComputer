@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="2.13.20" version="1.0">
+<project source="2.13.22" version="1.0">
 This file is intended to be loaded by Logisim-evolution (https://github.com/reds-heig/logisim-evolution).
 <lib desc="#Wiring" name="0">
     <tool name="Splitter">
@@ -193,28 +193,16 @@ end TCL_Generic;
     <wire from="(810,160)" to="(810,210)"/>
     <wire from="(890,440)" to="(890,490)"/>
     <wire from="(770,220)" to="(910,220)"/>
-    <comp loc="(980,350)" name="ALU"/>
-    <comp lib="0" loc="(770,90)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
-    </comp>
     <comp loc="(200,150)" name="Counter4"/>
     <comp lib="0" loc="(40,150)" name="Clock"/>
-    <comp lib="5" loc="(30,300)" name="Button">
-      <a name="facing" val="north"/>
-      <a name="label" val="RST"/>
-      <a name="labelloc" val="south"/>
-    </comp>
-    <comp lib="0" loc="(980,350)" name="Splitter">
-      <a name="incoming" val="8"/>
-      <a name="bit1" val="0"/>
-      <a name="bit2" val="0"/>
-      <a name="bit3" val="0"/>
-      <a name="bit4" val="1"/>
-      <a name="bit5" val="1"/>
-      <a name="bit6" val="1"/>
-      <a name="bit7" val="1"/>
+    <comp lib="5" loc="(1040,150)" name="Hex Digit Display"/>
+    <comp lib="5" loc="(1000,150)" name="Hex Digit Display"/>
+    <comp lib="4" loc="(310,140)" name="ROM">
+      <a name="addrWidth" val="4"/>
+      <a name="dataWidth" val="20"/>
+      <a name="contents">addr/data: 4 20
+20809 60f02 c0101
+</a>
     </comp>
     <comp lib="0" loc="(550,200)" name="Splitter">
       <a name="fanout" val="3"/>
@@ -239,15 +227,27 @@ end TCL_Generic;
       <a name="bit18" val="0"/>
       <a name="bit19" val="0"/>
     </comp>
-    <comp lib="5" loc="(1040,150)" name="Hex Digit Display"/>
-    <comp lib="4" loc="(310,140)" name="ROM">
-      <a name="addrWidth" val="4"/>
-      <a name="dataWidth" val="20"/>
-      <a name="contents">addr/data: 4 20
-20809 60f02 c0101
-</a>
+    <comp lib="0" loc="(980,350)" name="Splitter">
+      <a name="incoming" val="8"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="1"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
     </comp>
-    <comp lib="5" loc="(1000,150)" name="Hex Digit Display"/>
+    <comp lib="5" loc="(30,300)" name="Button">
+      <a name="facing" val="north"/>
+      <a name="label" val="RST"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp loc="(980,350)" name="ALU"/>
+    <comp lib="0" loc="(770,90)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
   </circuit>
   <circuit name="ALU">
     <a name="circuit" val="ALU"/>
@@ -271,10 +271,10 @@ end TCL_Generic;
       <text fill="#404040" font-family="Courier 10 Pitch" font-size="12" text-anchor="start" x="124" y="204">S0</text>
       <rect height="11" stroke="none" width="3" x="89" y="209"/>
       <circ-port height="8" pin="180,500" width="8" x="86" y="216"/>
-      <circ-port height="8" pin="120,160" width="8" x="46" y="136"/>
       <circ-port height="8" pin="590,60" width="8" x="46" y="96"/>
-      <circ-port height="8" pin="120,90" width="8" x="46" y="116"/>
       <circ-port height="8" pin="180,480" width="8" x="126" y="216"/>
+      <circ-port height="8" pin="120,90" width="8" x="46" y="116"/>
+      <circ-port height="8" pin="120,160" width="8" x="46" y="136"/>
       <circ-port height="8" pin="150,50" width="8" x="106" y="36"/>
       <circ-port height="8" pin="130,50" width="8" x="126" y="36"/>
       <text fill="#404040" font-family="Courier 10 Pitch" font-size="12" text-anchor="start" x="84" y="203">S1</text>
@@ -289,6 +289,7 @@ end TCL_Generic;
     <wire from="(270,170)" to="(270,180)"/>
     <wire from="(690,360)" to="(750,360)"/>
     <wire from="(120,160)" to="(170,160)"/>
+    <wire from="(270,120)" to="(570,120)"/>
     <wire from="(360,500)" to="(360,520)"/>
     <wire from="(590,60)" to="(590,150)"/>
     <wire from="(480,220)" to="(480,240)"/>
@@ -315,6 +316,7 @@ end TCL_Generic;
     <wire from="(590,260)" to="(690,260)"/>
     <wire from="(170,140)" to="(170,160)"/>
     <wire from="(290,150)" to="(400,150)"/>
+    <wire from="(570,120)" to="(570,150)"/>
     <wire from="(440,210)" to="(440,240)"/>
     <wire from="(460,350)" to="(750,350)"/>
     <wire from="(440,210)" to="(540,210)"/>
@@ -337,50 +339,45 @@ end TCL_Generic;
     <wire from="(460,290)" to="(460,350)"/>
     <wire from="(790,360)" to="(870,360)"/>
     <wire from="(540,250)" to="(550,250)"/>
-    <comp lib="0" loc="(180,500)" name="Pin">
-      <a name="label" val="S1"/>
-    </comp>
-    <comp lib="1" loc="(570,200)" name="OR Gate">
-      <a name="facing" val="south"/>
-    </comp>
-    <comp lib="0" loc="(380,540)" name="Splitter">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(120,160)" name="Pin">
+    <comp lib="1" loc="(230,90)" name="NOT Gate">
       <a name="width" val="8"/>
-      <a name="label" val="B"/>
     </comp>
-    <comp lib="0" loc="(120,90)" name="Pin">
+    <comp lib="1" loc="(230,160)" name="NOT Gate">
       <a name="width" val="8"/>
-      <a name="label" val="A"/>
     </comp>
     <comp lib="2" loc="(290,80)" name="Multiplexer">
       <a name="width" val="8"/>
       <a name="enable" val="false"/>
     </comp>
-    <comp lib="0" loc="(150,50)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="An"/>
-      <a name="labelloc" val="north"/>
-    </comp>
     <comp lib="1" loc="(460,290)" name="OR Gate">
       <a name="facing" val="south"/>
       <a name="width" val="8"/>
     </comp>
-    <comp lib="0" loc="(130,50)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="Bn"/>
-      <a name="labelloc" val="north"/>
+    <comp lib="0" loc="(180,500)" name="Pin">
+      <a name="label" val="S1"/>
+    </comp>
+    <comp lib="0" loc="(120,90)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(380,540)" name="Splitter">
+      <a name="facing" val="north"/>
     </comp>
     <comp lib="2" loc="(790,360)" name="Multiplexer">
       <a name="select" val="2"/>
       <a name="width" val="8"/>
       <a name="enable" val="false"/>
     </comp>
-    <comp lib="1" loc="(230,90)" name="NOT Gate">
-      <a name="width" val="8"/>
-    </comp>
     <comp lib="3" loc="(590,260)" name="Adder"/>
+    <comp lib="0" loc="(150,50)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="An"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="2" loc="(290,150)" name="Multiplexer">
+      <a name="width" val="8"/>
+      <a name="enable" val="false"/>
+    </comp>
     <comp lib="0" loc="(870,360)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -397,15 +394,21 @@ end TCL_Generic;
       <a name="label" val="Cin"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="1" loc="(230,160)" name="NOT Gate">
-      <a name="width" val="8"/>
+    <comp lib="0" loc="(130,50)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Bn"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="1" loc="(570,200)" name="OR Gate">
+      <a name="facing" val="south"/>
+      <a name="inputs" val="3"/>
     </comp>
     <comp lib="0" loc="(180,480)" name="Pin">
       <a name="label" val="S0"/>
     </comp>
-    <comp lib="2" loc="(290,150)" name="Multiplexer">
+    <comp lib="0" loc="(120,160)" name="Pin">
       <a name="width" val="8"/>
-      <a name="enable" val="false"/>
+      <a name="label" val="B"/>
     </comp>
   </circuit>
   <circuit name="Counter4">
@@ -422,8 +425,8 @@ end TCL_Generic;
       <text fill="#404040" font-family="Courier 10 Pitch" font-size="12" text-anchor="start" x="65" y="84">R</text>
       <rect height="4" stroke="none" width="10" x="140" y="58"/>
       <text fill="#404040" font-family="Courier 10 Pitch" font-size="12" text-anchor="end" x="135" y="64">CNT</text>
-      <circ-port height="8" pin="160,340" width="8" x="46" y="76"/>
       <circ-port height="10" pin="710,510" width="10" x="145" y="55"/>
+      <circ-port height="8" pin="160,340" width="8" x="46" y="76"/>
       <circ-port height="8" pin="160,300" width="8" x="46" y="56"/>
       <rect fill="none" height="45" stroke="#000000" stroke-width="2" width="80" x="60" y="50"/>
       <circ-anchor facing="east" height="6" width="6" x="147" y="57"/>
@@ -474,17 +477,15 @@ end TCL_Generic;
     <wire from="(640,300)" to="(650,300)"/>
     <wire from="(610,260)" to="(620,260)"/>
     <wire from="(730,260)" to="(730,440)"/>
-    <comp lib="0" loc="(160,300)" name="Pin">
-      <a name="label" val="clk"/>
-    </comp>
-    <comp lib="4" loc="(660,250)" name="D Flip-Flop"/>
     <comp lib="0" loc="(620,500)" name="Splitter">
       <a name="facing" val="north"/>
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
     </comp>
-    <comp lib="4" loc="(460,250)" name="D Flip-Flop"/>
-    <comp lib="4" loc="(360,250)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(160,340)" name="Pin">
+      <a name="label" val="R"/>
+    </comp>
+    <comp lib="4" loc="(560,250)" name="D Flip-Flop"/>
     <comp lib="0" loc="(710,510)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -492,9 +493,11 @@ end TCL_Generic;
       <a name="label" val="CNT"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="4" loc="(560,250)" name="D Flip-Flop"/>
-    <comp lib="0" loc="(160,340)" name="Pin">
-      <a name="label" val="R"/>
+    <comp lib="4" loc="(360,250)" name="D Flip-Flop"/>
+    <comp lib="4" loc="(660,250)" name="D Flip-Flop"/>
+    <comp lib="4" loc="(460,250)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(160,300)" name="Pin">
+      <a name="label" val="clk"/>
     </comp>
   </circuit>
 </project>
