@@ -39,7 +39,7 @@ ADD 15, 2
 
 The HEX code we got is `20f02`. We can upload this to our ROM now, and see the result!
 
-##The ALU
+## The ALU
 ![ALU](./ALU.png) 
 
 This ALU is made up of :
